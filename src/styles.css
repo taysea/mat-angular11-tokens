@@ -1,1 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
+/* Adding in fonts which can we found at: https://github.com/grommet/grommet-theme-hpe/blob/master/src/js/themes/hpe.js#L159 */
+/* We are exploring how we might publish the font urls as a token */
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Regular.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Regular.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Regular.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Regular.woff")
+      format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Bold.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Bold.woff")
+      format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Semibold.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Semibold.woff")
+      format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Medium.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Medium.woff")
+      format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Metric";
+  src: url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Light.woff2")
+      format("woff2"),
+    url("https://www.hpe.com/h41225/hfws-static/fonts/metric-hpe-web/MetricHPE-Web-Light.woff")
+      format("woff");
+  font-weight: 100;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a[mat-button],
+a[mat-stroked-button],
+a[mat-flat-button] {
+  text-decoration: none;
+}
+
+/* HPE Button kind="default" => Material "mat-button" */
+[mat-button] {
+  /* Here, I'm just creating my own CSS variables so I can reassign their
+       values easily for differet states like :hover, :disabled, etc. without
+       needing to rewrite the CSS properties. */
+  /* --------- "dimension" related tokens to medium default button ------------ */
+  --mat-button-font-size: var(--hpe-button-medium-default-font-size);
+  --mat-button-font-weight: var(--hpe-button-default-enabled-font-weight);
+  --mat-button-min-height: var(--hpe-button-medium-default-min-height);
+  --mat-button-border-radius: var(--hpe-button-medium-default-border-radius);
+  --mat-button-horizontal-padding: var(--hpe-button-medium-default-padding-x);
+  --mat-button-vertical-padding: var(--hpe-button-medium-default-padding-y);
+  --mat-button-border-width: var(--hpe-button-medium-default-border-width);
+
+  /* --------- "color" related tokens to default button ------------ */
+  --mat-button-background: var(--hpe-button-default-enabled-background);
+  --mat-button-border-color: var(--hpe-button-default-enabled-border-color);
+  --mat-button-text-color: var(--hpe-button-default-enabled-text-color);
+  --mat-button-font-family: "Metric";
+
+  border: var(--mat-button-border-width) solid var(--mat-button-border-color);
+  min-height: var(--mat-button-min-height);
+  font-size: var(--mat-button-font-size);
+  /* font-weight: var(--mat-button-font-weight); */
+  font-weight: var(--hpe-button-default-enabled-font-weight);
+  border-radius: var(--mat-button-border-radius);
+  padding-inline: var(--mat-button-horizontal-padding);
+  padding-block: var(--mat-button-vertical-padding);
+
+  background: var(--mat-button-background);
+  color: var(--mat-button-text-color);
+  font-family: var(--mat-button-font-family);
+}
+
+[mat-button]:hover {
+  --mat-button-background: var(--hpe-button-default-hover-background);
+  --mat-button-border-color: var(--hpe-button-default-hover-border-color);
+  --mat-button-text-color: var(--hpe-button-default-hover-text-color);
+}
+
+[mat-button]:disabled {
+  --mat-button-background: var(--hpe-button-default-disabled-background);
+  --mat-button-border-color: var(--hpe-button-default-disabled-border-color);
+  --mat-button-text-color: var(--hpe-button-default-disabled-text-color);
+}
+
+/* HPE Button kind="primary" => Material "mat-flat-button" */
+
+[mat-flat-button] {
+  /* --------- "dimension" related tokens to medium default button ------------ */
+  --mat-flat-button-font-size: var(--hpe-button-medium-primary-font-size);
+  --mat-flat-button-font-weight: var(--hpe-button-primary-enabled-font-weight);
+  --mat-flat-button-min-height: var(--hpe-button-medium-primary-min-height);
+  --mat-flat-button-border-radius: var(
+    --hpe-button-medium-primary-border-radius
+  );
+  --mat-flat-button-horizontal-padding: var(
+    --hpe-button-medium-primary-padding-x
+  );
+  --mat-flat-button-vertical-padding: var(
+    --hpe-button-medium-primary-padding-y
+  );
+  --mat-flat-button-border-width: var(--hpe-button-medium-primary-border-width);
+
+  /* --------- "color" related tokens to primary button ------------ */
+  --mat-flat-button-background: var(--hpe-button-primary-enabled-background);
+  --mat-flat-button-border-color: var(
+    --hpe-button-primary-enabled-border-color
+  );
+  --mat-flat-button-text-color: var(--hpe-button-primary-enabled-text-color);
+  --mat-flat-button-font-family: "Metric";
+
+  border: var(--mat-flat-button-border-width) solid
+    var(--mat-flat-button-border-color);
+  min-height: var(--mat-flat-button-min-height);
+  font-size: var(--mat-flat-button-font-size);
+  font-weight: var(--mat-flat-button-font-weight);
+  border-radius: var(--mat-flat-button-border-radius);
+  padding-inline: var(--mat-flat-button-horizontal-padding);
+  padding-block: var(--mat-flat-button-vertical-padding);
+
+  background: var(--mat-flat-button-background);
+  color: var(--mat-flat-button-text-color);
+  font-family: var(--mat-flat-button-font-family);
+}
+
+[mat-flat-button]:hover {
+  --mat-flat-button-background: var(--hpe-button-primary-hover-background);
+  --mat-flat-button-border-color: var(--hpe-button-primary-hover-border-color);
+  --mat-flat-button-text-color: var(--hpe-button-primary-hover-text-color);
+}
+
+[mat-flat-button]:disabled {
+  --mat-flat-button-background: var(--hpe-button-primary-disabled-background);
+  --mat-flat-button-border-color: var(
+    --hpe-button-primary-disabled-border-color
+  );
+  --mat-flat-button-text-color: var(--hpe-button-primary-disabled-text-color);
+}
+
+/* TO DO: LabRAT team, please try to style Material's "stroked" button with HPE "secondary" button styles */

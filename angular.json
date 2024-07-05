@@ -18,11 +18,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/hpe-design-tokens/css/base.css",
+              "node_modules/hpe-design-tokens/css/color.light.css",
+              "node_modules/hpe-design-tokens/css/color.dark.css",
+              "node_modules/hpe-design-tokens/css/dimension.large.css",
+              "node_modules/hpe-design-tokens/css/dimension.small.css",
+              "node_modules/hpe-design-tokens/css/components.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -85,11 +88,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/hpe-design-tokens/css/base.css",
+              "node_modules/hpe-design-tokens/css/color.light.css",
+              "node_modules/hpe-design-tokens/css/color.dark.css",
+              "node_modules/hpe-design-tokens/css/dimension.large.css",
+              "node_modules/hpe-design-tokens/css/dimension.small.css",
+              "node_modules/hpe-design-tokens/css/components.css",
               "src/styles.css"
             ],
             "scripts": []
